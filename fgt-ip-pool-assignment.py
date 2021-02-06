@@ -75,8 +75,8 @@ def valid_ipv4_unicast(candidate):
                 valid_unicast = False
             
             # verify not loopback (RFC 1122); sometimes used in testing
-            #if octets[0] == 127:
-            #    valid_unicast = False
+            if octets[0] == 127:
+                valid_unicast = False
             
             # verify not self-assigned IP (RFC 3927)
             if (octets[0] == 169 and octets[1] == 254):
